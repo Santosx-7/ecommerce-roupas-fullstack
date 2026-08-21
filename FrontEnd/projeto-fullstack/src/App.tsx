@@ -1,12 +1,8 @@
-import Input from "./components/input";
+import { router } from "./Router";
+import { RouterProvider } from "react-router";
 
 function App() {
-  return (
-    <div className="flex gap-2 bg-[#121212]">
-      <Input placeholder="Email@exemplo.com..." type="email" />
-      <Input placeholder="Senha..." type="password" />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

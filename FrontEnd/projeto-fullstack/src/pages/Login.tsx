@@ -1,5 +1,6 @@
-import Input from "./components/input";
+import Input from "../components/input";
 import { useState } from "react";
+import { Link } from "react-router";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,10 @@ function Login() {
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col items-center justify-center gap-2">
-        <img src="./logo.png" alt="logo" className="mb-4" />
+        <Link to={"/"}>
+          <img src="./logo.png" alt="logo" className="mb-4" />
+        </Link>
+
         <Input
           placeholder="Email@exemplo.com..."
           type="email"
@@ -29,8 +33,12 @@ function Login() {
           onChange={(e) => setSenha(e.target.value)}
         />
 
-        <button className="m-2 w-full cursor-pointer rounded-sm bg-[#F2F2F2] py-3 text-sm font-semibold text-[#121212]">
+        <button className="m-2 w-full cursor-pointer rounded-xl bg-[#F2F2F2] py-3 text-sm font-semibold text-[#121212]">
           Login
+        </button>
+
+        <button className="w-full cursor-pointer rounded-xl border border-white bg-transparent py-3 text-sm font-bold text-white">
+          Já tenho uma conta
         </button>
       </div>
     </form>
