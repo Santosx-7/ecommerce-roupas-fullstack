@@ -1,4 +1,5 @@
 import Input from "../components/input";
+import Button from "../components/Button";
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -33,13 +34,16 @@ function Login() {
           onChange={(e) => setSenha(e.target.value)}
         />
 
-        <button className="m-2 w-full cursor-pointer rounded-xl bg-[#F2F2F2] py-3 text-sm font-semibold text-[#121212]">
-          Login
-        </button>
-
-        <button className="w-full cursor-pointer rounded-xl border border-white bg-transparent py-3 text-sm font-bold text-white">
-          Já tenho uma conta
-        </button>
+        <Button 
+         title="Login"
+         variant="default"
+        />
+      <Link to="/register" className="w-full">
+        <Button 
+        title="Não tenho uma Conta"
+        variant="outline"
+        />
+      </Link>
       </div>
     </form>
   );
